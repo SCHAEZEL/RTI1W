@@ -1,0 +1,15 @@
+F:\Work Space\RTI1W\bin\Debug\net6.0\RTI1W.exe
+F:\Work Space\RTI1W\bin\Debug\net6.0\RTI1W.deps.json
+F:\Work Space\RTI1W\bin\Debug\net6.0\RTI1W.runtimeconfig.json
+F:\Work Space\RTI1W\bin\Debug\net6.0\RTI1W.dll
+F:\Work Space\RTI1W\bin\Debug\net6.0\RTI1W.pdb
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.csproj.AssemblyReference.cache
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.GeneratedMSBuildEditorConfig.editorconfig
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.AssemblyInfoInputs.cache
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.AssemblyInfo.cs
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.csproj.CoreCompileInputs.cache
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.dll
+F:\Work Space\RTI1W\obj\Debug\net6.0\refint\RTI1W.dll
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.pdb
+F:\Work Space\RTI1W\obj\Debug\net6.0\RTI1W.genruntimeconfig.cache
+F:\Work Space\RTI1W\obj\Debug\net6.0\ref\RTI1W.dll
