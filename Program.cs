@@ -4,6 +4,9 @@ using System.Numerics;
 
 namespace RTI1W // REF. Ray Tracing in 1 Weekend.
 {
+    // REF.Ray Tracing in One Weekend(中文翻译)
+    // https://blog.csdn.net/xiji333/article/details/108730223
+
     internal class Program
     {
         // 实现渐变色
