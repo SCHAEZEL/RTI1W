@@ -6,30 +6,55 @@ using System.Numerics;
 
 namespace RTI1W
 {
-    public class Sphere
+    public class Sphere : Hittable
     {
-        public Sphere(Vector3 ori, float radius)
+        public Sphere(Vector3 center, float radius)
         {
-            this._ori = ori;
+            this._center = center;
             this._radius = radius;
         }
 
-        public bool IsIntersected(Ray r)
+        /// <summary>
+        /// Returns the intersection 
+        /// </summary>
+        /// <param name="r"> Ray </param>
+        /// <returns></returns>
+        public override bool Intersect(Ray r, ref HitRecord hRec, float tMin = 0, float tMax = float.MaxValue)
         {
-            Vector3 aMinusC = r.ori - Ori;
-            float a = Vector3.Dot(r.dir, r.dir);
-            float b = Vector3.Dot(r.dir, r.ori - aMinusC);
-            float c = Vector3.Dot(aMinusC, aMinusC) - Radius * Radius;
+            Vector3 oc = r.Origin - Center;
+            float a = r.Direction.LengthSquared();
+            float h_b = Vector3.Dot(r.Direction, oc);
+            float c = oc.LengthSquared() - Radius * Radius;
 
-            // discriminant 判别式
-            float disc = b * b - 4 * a * c;
-            return disc > 0;
+            // Discriminant
+            float disc = h_b * h_b - a * c;
+            if (disc >= 0)
+            {
+                // Return the smaller one, and t1 is always smaller than t2, thus  if t1 > 0, just return it.
+                float root = MathF.Sqrt(disc);
+                float t = (-h_b - root) / (a); // t1
+                if (t > 0 && tMin <= t && t <= tMax)
+                {
+                    hRec.SetValue(t, r.At(t), Vector3.Normalize(r.At(t) - Center), r);
+                    return true;
+                }
+
+                // t2
+                t = (-h_b + root) / (a);
+                if (t > 0 && tMin <= t && t <= tMax)
+                {
+                    hRec.SetValue(t, r.At(t), Vector3.Normalize(r.At(t) - Center), r);
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        Vector3 _ori;
-        float _radius;
-
-        public Vector3 Ori => _ori;
+        public Vector3 Center => _center;
         public float Radius => _radius;
+
+        Vector3 _center;
+        float _radius;
     }
 }

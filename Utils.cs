@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using static RTI1W.Image;
 
 namespace RTI1W
 {
@@ -17,8 +18,8 @@ namespace RTI1W
 
         public static void PPMExample(string? fileName = "image")
         {
-            const int image_width = 256;
-            const int image_height = 256;
+            const int image_width = 100;
+            const int image_height = 100;
             string ppmContent = $"P3\n{image_width} {image_height}\n255\n";
 
             for (int j = image_height - 1; j >= 0; --j)
@@ -37,5 +38,24 @@ namespace RTI1W
             File.WriteAllText($"{imageName}.ppm", ppmContent);
             Console.WriteLine("Success");
         }
+
+        public static float Deg2Rad(float degree)
+        {
+            return degree * pi / 180f;
+        }
+
+        public static float RandomFloat()
+        {
+            Random random = new Random();
+            return random.NextSingle();
+        }
+
+        public static float RandomFloat(float min, float max)
+        {
+            return min + (max - min) * RandomFloat();
+        }
+
+        public const float infinity = float.MaxValue;
+        public const float pi = MathF.PI;
     }
 }

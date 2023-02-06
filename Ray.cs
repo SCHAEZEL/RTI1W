@@ -6,22 +6,22 @@ namespace RTI1W
     {
         public Ray()
         {
-            this.ori = Vector3.Zero;
-            this.dir = Vector3.Zero;
+            this.Origin = Vector3.Zero;
+            this.Direction = Vector3.Zero;
         }
 
         public Ray(Vector3 origin, Vector3 direction)
         {
-            this.ori = origin;
-            this.dir = direction;
+            this.Origin = origin;
+            this.Direction = direction;
         }
 
-        Vector3 At(float t)
+        public Vector3 At(float t)
         {
-            return ori + t * dir;
+            return Origin + t * Direction;
         }
 
-        public Vector3 ori { get; private set; }
-        public Vector3 dir { get; private set; }
+        public Vector3 Origin { get; private set; }
+        public Vector3 Direction { get; private set; }
     };
 }
