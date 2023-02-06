@@ -31,11 +31,12 @@ namespace RTI1W
         public Vector3 Horizontal => horizontal;
         public Vector3 Vertical => vertical;
 
-        Vector3 cameraPos;
         float viewportHeight;
         float viewportWidth;
         float focalLength;
+
         Vector3 horizontal;
+        Vector3 cameraPos;
         Vector3 vertical;
 
         // Position of screen's lower left corner 

@@ -9,7 +9,7 @@ namespace RTI1W
     public class HitRecord
     {
         /// <summary>
-        /// Set record content.
+        /// Set hit content.
         /// </summary>
         public void SetValue(float distance, Vector3 point, Vector3 outwardNormal, Ray r)
         {
@@ -55,14 +55,14 @@ namespace RTI1W
         }
     }
 
-    public class HittableList : Hittable
+    public class Scene : Hittable
     {
-        public HittableList()
+        public Scene()
         {
             objects = new List<Hittable>();
         }
 
-        public HittableList(Hittable hittable)
+        public Scene(Hittable hittable)
         {
             objects = new List<Hittable>();
             objects.Add(hittable);

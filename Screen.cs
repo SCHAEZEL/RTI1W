@@ -9,7 +9,7 @@ namespace RTI1W
     public static class Screen
     {
         public const float aspectRatio = 16.0f / 9.0f;
-        public const int imageWidth = 100;
+        public const int imageWidth = 150;
         public const int imageHeight = (int)(imageWidth / aspectRatio);
     }
 }

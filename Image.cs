@@ -33,7 +33,15 @@ namespace RTI1W
             ppmContent += $"{ir} {ig} {ib}\n";
         }
 
-        public void RenderPPM(Camera camera, HittableList scene, RenderDelegate OnColorRender)
+        public void WriteColor(Color pixelColor, int samplesPerPixel)
+        {
+            int ir = (int)(255.999 * pixelColor.R) / samplesPerPixel;
+            int ig = (int)(255.999 * pixelColor.G) / samplesPerPixel;
+            int ib = (int)(255.999 * pixelColor.B) / samplesPerPixel;
+            ppmContent += $"{ir} {ig} {ib}\n";
+        }
+
+        public void RenderPPM(Camera camera, Scene scene, RenderDelegate OnColorRender)
         {
             int imageWidth = Screen.imageWidth;
             int imageHeight = Screen.imageHeight;
@@ -55,6 +63,6 @@ namespace RTI1W
             image.Save();
         }
 
-        public delegate Color RenderDelegate(Ray r, HittableList scene);
+        public delegate Color RenderDelegate(Ray r, Scene scene);
     }
 }
