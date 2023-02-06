@@ -9,7 +9,7 @@ namespace RTI1W // REF. Ray Tracing in 1 Weekend.
 
     internal class Program
     {
-        // 实现渐变色
+        // 插值实现渐变色背景色
         static Color OnColorRenderer(Ray r, Scene scene)
         {
             HitRecord hitRecord = new HitRecord();

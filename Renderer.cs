@@ -17,6 +17,8 @@ namespace RTI1W
 
         public void Render(Camera camera, Scene scene, RenderDelegate OnColorRenderer, RenderOptions options)
         {
+            // TODO:采用并行方式计算像素颜色
+            // https://www.cnblogs.com/woxpp/p/3925094.html
             int imageWidth = Screen.imageWidth;
             int imageHeight = Screen.imageHeight;
             int samplesPerPixel = 100;
